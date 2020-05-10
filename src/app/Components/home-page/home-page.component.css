@@ -1,0 +1,24 @@
+.home
+{
+    background: url(/assets/images/1.jpg) center no-repeat ;
+    background-size: cover;
+    font-size: 2.4rem;
+    color:#25B491;
+    height: 100vh;
+
+}
+.welcome
+{
+    font-family:palatino ;
+    position:absolute;
+    top:35%;
+    left:25%;
+}
+#M
+{
+    color:#F2BC24;
+}
+#N
+{
+    color:#EB55A2 ;
+}

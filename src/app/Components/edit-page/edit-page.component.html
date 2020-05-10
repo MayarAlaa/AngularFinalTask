@@ -1,0 +1,63 @@
+<!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header myheader">
+          <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-cog"></i> edit student info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="regForm" (ngSubmit)="editStudent()">
+               <!--Name-->
+               <div class="form-group">
+                <label class="mylabels" for="name">Name :</label>
+                <input formControlName="name" id="name" type="text" class="form-control" name="name" > 
+              </div>
+              <div class="alert alert-danger" *ngIf="!nameStatus">
+                Required, 8 Charachters only.
+
+              </div>
+               <!--Age-->
+               <div class="form-group">
+                <label class="mylabels" for="age">Age :</label>
+                <input formControlName="age" id="age" type="number" class="form-control" name="age">
+              </div>
+              <div class="alert alert-danger" *ngIf="!ageStatus">
+                Required, Between 12 and 60.
+
+              </div>
+                <!--email-->
+                <div class="form-group">
+                <label class="mylabels" for="email">E-mail :</label>
+                <input formControlName="mail" id="email" type="email" class="form-control" name="email">
+                </div>
+                <div class="alert alert-danger" *ngIf="!mailStatus">
+                  Required, Valid mail.
+                </div>
+                <!--Photo-->
+                <div class="form-group">
+                    <label class="mylabels" for="inputGroupFile01">Photo :</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01" accept="image/jpg|npg|gif">
+                      <label class="custom-file-label mylab" for="inputGroupFile01"></label>
+                    </div>
+                  </div>
+                  <br>
+                  <hr>
+                  <br>
+                  <div class="mybtns">
+                  <input type="submit" class="btn myheader mr-3" value="Save">
+                  <button type="button" class="btn myheader ml-5"  data-dismiss="modal">Close</button>
+                  </div>
+            </form>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>

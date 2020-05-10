@@ -1,0 +1,23 @@
+.mylabels
+{
+    color: #25B491;
+    font-weight: bold;
+}
+.myheader
+{
+    background-color: #25B491;
+    color:white;
+}
+.mylab
+{
+    color:#25B491;
+    font-weight: bold;
+}
+.myheader:hover
+{
+  background-color: #35c4a1;
+}
+.mybtns
+{
+    text-align: center;
+}
