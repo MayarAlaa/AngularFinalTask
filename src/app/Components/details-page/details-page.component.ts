@@ -2,6 +2,7 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
 import * as $ from 'jquery';
 import{Router, ActivatedRoute} from '@angular/router';
 import { StudentsService } from 'src/app/services/students.service';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -37,11 +38,27 @@ export class DetailsPageComponent implements OnInit,OnDestroy {
 
   checkDelete()
   {
-     var sure = confirm(`Are you sure you want to delete student with id : ${this.id} and name : ${this.student.name}`);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Deleted!',
+          'The student has been deleted.',
+          'success'
+        
+        ).then(()=>{this.deleteStudent();})
 
-     if (sure == true) {
-      this.deleteStudent();
-    } 
+        
+      }
+    })
+   
   }
   deleteStudent()
   {

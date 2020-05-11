@@ -13,54 +13,13 @@
 
       <tr *ngFor = "let student of students">
         <td>
-         <img src={{student.image}} alt="">
+         <img src={{student.image}} width="50" height="50" alt="">
          <!--Don'tForgetToPassID-->
          <a routerLink="/Student/{{student.id}}" class="user-link">{{student.name}}</a>
         </td>
         </tr>
-      
-    <tr>
-    <td>
-     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-     <!--Don'tForgetToPassID-->
-     <a routerLink="/Student/1" class="user-link">Mila Kunis</a>
-    </td>
-    </tr>
+  
 
-    <tr>
-     <td>
-      <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
-        <a routerLink="/Student/2" class="user-link">George Clooney</a>
-     </td>                         
-    </tr>
-
-    <tr>
-     <td>
-      <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-       <a routerLink="/Student/3" class="user-link">Ryan Gossling</a>
-      </td>    
-    </tr>
-
-     <tr>
-      <td>
-        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="">
-        <a routerLink="/Student/4" class="user-link">Emma Watson</a>
-      </td>
-     </tr>
-     
-    <tr>
-        <td>
-         <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="">
-         <a routerLink="/Student/5" class="user-link">Robert Downey Jr.</a>
-        </td>
-    </tr>
-
-    <tr>
-     <td>
-      <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
-      <a routerLink="/Student/6" class="user-link">Mila Kunis</a>
-     </td>   
-    </tr>
                             
     </tbody>
  </table>

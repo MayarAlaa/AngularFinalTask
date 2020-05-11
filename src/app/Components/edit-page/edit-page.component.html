@@ -11,7 +11,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form [formGroup]="regForm" (ngSubmit)="editStudent()">
+            <form [formGroup]="regForm" (ngSubmit)="checkEditStudent()">
                <!--Name-->
                <div class="form-group">
                 <label class="mylabels" for="name">Name :</label>
@@ -51,7 +51,7 @@
                   <hr>
                   <br>
                   <div class="mybtns">
-                  <input type="submit" class="btn myheader mr-3" value="Save">
+                  <input type="submit" class="btn myheader mr-3" value="Save" [disabled]="regForm.invalid" >
                   <button type="button" class="btn myheader ml-5"  data-dismiss="modal">Close</button>
                   </div>
             </form>

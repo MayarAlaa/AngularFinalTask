@@ -17,15 +17,18 @@ export class RegisterPageComponent implements OnInit,OnDestroy{
    mySubscription;
    imgPath;
    errorMsg;
-   regForm = new FormGroup({
-     name:new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]),
-     age:new FormControl('',[Validators.min(18),Validators.max(60)]),
-     mail:new FormControl('',Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,4}$"))
-   })
+   regForm;
+   
   get nameStatus (){return this.regForm.controls.name.valid;}
   get ageStatus  (){return this.regForm.controls.age.valid;}
   get mailStatus (){return this.regForm.controls.mail.valid;}
   ngOnInit(): void {
+
+    this.regForm = new FormGroup({
+      name:new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]),
+      age:new FormControl('',[Validators.min(18),Validators.max(60)]),
+      mail:new FormControl('',Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,4}$"))
+    })
 
     var base64;
     var that = this;
@@ -75,7 +78,7 @@ export class RegisterPageComponent implements OnInit,OnDestroy{
                             name: this.regForm.get('name').value,
                             age: this.regForm.get('age').value,
                             email: this.regForm.get('mail').value,
-                            image: this.imgPath
+                            image: this.imgPath??"assets/images/defaultImage.jpg"
                          }
                    
          // console.log(student);

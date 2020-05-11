@@ -3,6 +3,9 @@ import * as $ from 'jquery';
 import  {Router,ActivatedRoute} from '@angular/router';
 import {FormGroup, Validators,FormControl} from '@angular/forms';
 import { StudentsService } from 'src/app/services/students.service';
+import Swal from 'sweetalert2';
+
+
 @Component({
   selector: 'app-edit-page',
   templateUrl: './edit-page.component.html',
@@ -28,8 +31,7 @@ export class EditPageComponent implements OnInit,OnDestroy {
    }
 
   ngOnInit(): void {
-    console.log(this.id)
-    
+    //console.log(this.id)
  this.regForm = new FormGroup({
     name:new FormControl(this.student.name,[Validators.required,Validators.minLength(8),Validators.maxLength(8)]),
     age:new FormControl(this.student.age,[Validators.min(18),Validators.max(60)]),
@@ -71,6 +73,33 @@ export class EditPageComponent implements OnInit,OnDestroy {
   
 });
 
+  }
+
+
+  
+  checkEditStudent()
+  {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, update it!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Updated!',
+          'The student has been edited.',
+          'success'
+        
+        ).then(()=>{this.editStudent();})
+
+        
+      }
+    })
+   
   }
   
   editStudent()
