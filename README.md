@@ -24,4 +24,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use `nhelpg ` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Used packages
+Run `npm i g bootstrap`
+Run `npm i g jquery`
+Run `npm i g font-awesome`
+Run `npm i g sweetalert2`
+Run `npm i g json-server`
+## Run fake API
+Run `json-server --watch db.json --port3000`
+## Additional command 
+if you had issues related to different versions of angular, Run this command :
+Run `npm install @angular/core@9.1.4 @angular/animations@9.1.4 @angular/common@9.1.4 @angular/forms@9.1.4 @angular/platform-browser@9.1.4 @angular/router@9.1.4 @angular/platform-browser-dynamic@9.1.4 @angular/compiler@9.1.4 @angular/compiler-cli@9.1.4 @angular/language-service@9.1.4`
+
+
+ 
+
