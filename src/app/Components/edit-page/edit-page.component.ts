@@ -81,7 +81,7 @@ export class EditPageComponent implements OnInit,OnDestroy {
   {
     Swal.fire({
       title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      text: "You are editing student info!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

@@ -28,6 +28,7 @@ export class RegisterPageComponent implements OnInit,OnDestroy{
       name:new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]),
       age:new FormControl('',[Validators.min(18),Validators.max(60)]),
       mail:new FormControl('',Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,4}$"))
+      
     })
 
     var base64;
@@ -85,12 +86,19 @@ export class RegisterPageComponent implements OnInit,OnDestroy{
           ///1-PostStudentCodeHere
           this.mySubscription = this.myService.insertStudent(student).subscribe(() =>
                                 {
+
                                    ///3-Close Modal & GoToStudentsPage
                                  $('#exampleModalCenter .close').click()
+
+                                  this.regForm.get('name').setValue("");
+                                  this.regForm.get('age').setValue("");
+                                  this.regForm.get('mail').setValue("");
+                                  $('.custom-file-label').html('');
 
                                  this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
                                  this.router.navigate(['/Students']);
                                  
+                             
 
                               }); 
                               
